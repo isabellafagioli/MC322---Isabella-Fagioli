@@ -40,7 +40,7 @@ Peca[][] tabuleiro = new Peca[7][7];
 						
 			}		
 		}
-		System.out.println("Tabuleiro Incial: ");
+		System.out.println("Tabuleiro Inicial: ");
 		ApresentarTabuleiro();
 }
 		
@@ -103,23 +103,26 @@ Peca[][] tabuleiro = new Peca[7][7];
 				
 				System.out.println("Source:" + comando1);
 				System.out.println("Target:" + comando2);
-				ApresentarTabuleiro();
 			}
 		
 			else {
 				System.out.println("Essa jogada é inválida\n");
 			}
+			ApresentarTabuleiro();
 		}
 		
 		void ApresentarTabuleiro() {
 
-			for(int i = 0; i < 7; i++) {
-			    System.out.print(7-i);
-			    for(int j = 0; j < 7; j++) {
-			    	System.out.print(tabuleiro[i][j].caractere);
-			    }
-			    System.out.println();
-			}
-			System.out.println(" abcdefg\n");
-		}
+            String tab = "";
+            for(int i = 0; i < 7; i++) {
+                tab = tab + (7-i);
+                for(int j = 0; j < 7; j++) {
+                    tab = tab + tabuleiro[i][j].caractere;
+                }
+                tab = tab + '\n';
+            }
+            
+            System.out.print(tab);
+            System.out.println(" abcdefg\n");
+        }
 }
